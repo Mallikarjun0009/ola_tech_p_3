@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0">
+    <menus>
+        <menu id="MACLookup" xsi:type="WebPageMenuNode" _delta="define">>
+            <rank>30</rank>
+            <parent>IPTools</parent>
+            <url>$pages/exec.php?exec_module=teemip-macaddress-lookup&amp;exec_page=index.php&amp;c[menu]=MacLookup</url>
+        </menu>
+    </menus>
+</itop_design>

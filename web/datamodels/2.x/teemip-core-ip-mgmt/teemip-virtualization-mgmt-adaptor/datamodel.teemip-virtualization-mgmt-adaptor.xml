@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" load="strict">
+  <classes>
+    <class id="VirtualMachine" _delta="must_exist">
+      <fields>
+        <field id="managementip" xsi:type="AttributeIPAddress" _delta="delete"/>
+        <field id="managementip_id" xsi:type="AttributeExternalKey" _delta="define">
+          <filter>
+            <![CDATA[SELECT IPAddress AS ip JOIN IPConfig AS c ON ip.ipconfig_id = c.id WHERE c.attach_already_allocated_ips != 'yes' AND ip.status NOT IN ('allocated', 'reserved') AND ip.org_id = :this->org_id
+              UNION
+              SELECT IPAddress AS ip JOIN IPConfig AS c ON ip.ipconfig_id = c.id WHERE c.attach_already_allocated_ips = 'yes' AND ip.status NOT IN ('reserved') AND ip.org_id = :this->org_id]]>
+          </filter>
+          <dependencies>
+            <attribute id="org_id"/>
+          </dependencies>
+          <sql>managementip_id</sql>
+          <is_null_allowed>true</is_null_allowed>
+          <target_class>IPAddress</target_class>
+          <on_target_delete>DEL_MANUAL</on_target_delete>
+        </field>
+        <field id="managementip_name" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>managementip_id</extkey_attcode>
+          <target_attcode>fqdn</target_attcode>
+        </field>
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="col:col1">
+              <items>
+                <item id="fieldset:Server:moreinfo">
+                  <items>
+                    <item id="managementip" _delta="delete"/>
+                    <item id="managementip_id" _delta="define">
+                      <rank>25</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="managementip" _delta="delete"/>
+            <item id="managementip_id" _delta="define">
+              <rank>25</rank>
+            </item>
+          </items>
+        </search>
+        <summary>
+          <items>
+            <item id="managementip" _delta="delete_if_exists"/>
+            <item id="managementip_id" _delta="define">
+              <rank>30</rank>
+            </item>
+          </items>
+        </summary>
+      </presentation>
+    </class>
+    <class id="NetworkInterface" _delta="must_exist">
+      <fields>
+        <field id="operational_status" xsi:type="AttributeMetaEnum" _delta="must_exist">
+          <mappings>
+            <mapping id="LogicalInterface" _delta="define">
+              <attcode>status</attcode>
+              <metavalues>
+                <metavalue id="active">
+                  <values>
+                    <value id="active"/>
+                  </values>
+                </metavalue>
+                <metavalue id="inactive">
+                  <values>
+                    <value id="inactive"/>
+                  </values>
+                </metavalue>
+              </metavalues>
+            </mapping>
+          </mappings>
+        </field>
+      </fields>
+    </class>
+    <class id="LogicalInterface" _delta="must_exist">
+      <fields>
+        <field id="status" xsi:type="AttributeEnum" _delta="define">
+          <values>
+            <value id="active">
+              <code>active</code>
+							<style>
+								<main_color>hsla(92, 47.9%, 42.2%, 1)</main_color>
+								<complementary_color>hsla(0, 0%, 100%, 1)</complementary_color>
+								<decoration_classes/>
+							</style>
+            </value>
+            <value id="inactive">
+              <code>inactive</code>
+							<style>
+								<main_color>hsla(33, 89.9%, 64.9%, 1)</main_color>
+								<complementary_color>hsla(0, 0%, 100%, 1)</complementary_color>
+								<decoration_classes/>
+							</style>
+            </value>
+          </values>
+          <sql>status</sql>
+          <default_value>active</default_value>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>radio_horizontal</display_style>
+        </field>
+        <field id="vlans_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
+          <linked_class>lnkLogicalInterfaceToVLAN</linked_class>
+          <ext_key_to_me>logicalinterface_id</ext_key_to_me>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <ext_key_to_remote>vlan_id</ext_key_to_remote>
+          <duplicates/>
+        </field>
+        <field id="vrfs_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
+          <linked_class>lnkLogicalInterfaceToVRF</linked_class>
+          <ext_key_to_me>logicalinterface_id</ext_key_to_me>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <ext_key_to_remote>vrf_id</ext_key_to_remote>
+          <duplicates/>
+        </field>
+        <field id="org_id" xsi:type="AttributeExternalField" _delta="define_if_not_exists">
+          <extkey_attcode>virtualmachine_id</extkey_attcode>
+          <target_attcode>org_id</target_attcode>
+        </field>
+       </fields>
+      <presentation>
+        <details _delta="redefine">
+          <items>
+            <item id="vlans_list">
+              <rank>10</rank>
+            </item>
+            <item id="vrfs_list">
+              <rank>20</rank>
+            </item>
+            <item id="ip_list">
+              <rank>30</rank>
+            </item>
+            <item id="col:col1">
+              <rank>40</rank>
+              <items>
+                <item id="fieldset:Class:NetworkInterface:baseinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="name">
+                      <rank>10</rank>
+                    </item>
+                    <item id="status">
+                      <rank>20</rank>
+                    </item>
+                    <item id="virtualmachine_id">
+                      <rank>30</rank>
+                    </item>
+                    <item id="org_id">
+                      <rank>40</rank>
+                    </item>
+                    <item id="comment">
+                      <rank>50</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:col2">
+              <rank>50</rank>
+              <items>
+                <item id="fieldset:Class:NetworkInterface:moreinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="macaddress">
+                      <rank>10</rank>
+                    </item>
+                    <item id="speed">
+                      <rank>20</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <search _delta="must_exist">
+          <items>
+            <item id="ipaddress" _delta="delete"/>
+            <item id="ipgateway" _delta="delete"/>
+            <item id="ipmask" _delta="delete"/>
+          </items>
+        </search>
+        <default_search _delta="define">
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="status">
+              <rank>20</rank>
+            </item>
+            <item id="macaddress">
+              <rank>30</rank>
+            </item>
+            <item id="virtualmachine_id">
+              <rank>40</rank>
+            </item>
+            <item id="org_id">
+              <rank>42</rank>
+            </item>
+      </items>
+        </default_search>
+        <list _delta="must_exist">
+          <items>
+            <item id="status" _delta="define">
+              <rank>5</rank>
+            </item>
+            <item id="ipaddress" _delta="delete"/>
+            <item id="ipgateway" _delta="delete"/>
+            <item id="ipmask" _delta="delete"/>
+            <item id="org_id" _delta="define">
+              <rank>42</rank>
+            </item>
+          </items>
+        </list>
+        <summary _delta="if_exists">
+          <items>
+            <item id="ipaddress" _delta="delete"/>
+          </items>
+        </summary>
+      </presentation>
+    </class>
+    <class id="lnkLogicalInterfaceToVLAN" _created_in="itop-config-mgmt" _delta="define">
+      <parent>cmdbAbstractObject</parent>
+      <properties>
+        <is_link>1</is_link>
+        <category>bizmodel</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>lnklogicalinterfacetovlan</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="logicalinterface_name"/>
+            <attribute id="vlan_tag"/>
+          </attributes>
+        </naming>
+        <icon/>
+        <reconciliation>
+          <attributes>
+            <attribute id="logicalinterface_id"/>
+            <attribute id="vlan_id"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules>
+          <rule id="no_duplicate">
+            <attributes>
+              <attribute id="logicalinterface_id"/>
+              <attribute id="vlan_id"/>
+            </attributes>
+            <filter><![CDATA[]]></filter>
+            <disabled>false</disabled>
+            <is_blocking>true</is_blocking>
+          </rule>
+        </uniqueness_rules>
+      </properties>
+      <fields>
+        <field id="logicalinterface_id" xsi:type="AttributeExternalKey">
+          <sql>logicalinterface_id</sql>
+          <target_class>LogicalInterface</target_class>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="logicalinterface_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>logicalinterface_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="logicalinterface_device_id" xsi:type="AttributeExternalField">
+          <extkey_attcode>logicalinterface_id</extkey_attcode>
+          <target_attcode>virtualmachine_id</target_attcode>
+        </field>
+        <field id="logicalinterface_device_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>logicalinterface_id</extkey_attcode>
+          <target_attcode>virtualmachine_name</target_attcode>
+        </field>
+        <field id="vlan_id" xsi:type="AttributeExternalKey">
+          <sql>vlan_id</sql>
+          <target_class>VLAN</target_class>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="vlan_tag" xsi:type="AttributeExternalField">
+          <extkey_attcode>vlan_id</extkey_attcode>
+          <target_attcode>vlan_tag</target_attcode>
+        </field>
+        <field id="mode" xsi:type="AttributeEnum" _delta="define">
+          <values>
+            <value id="tagged">
+              <code>tagged</code>
+              <style>
+                <main_color>hsla(207, 72.6%, 57.1%, 1)</main_color>
+                <complementary_color>hsla(0, 0%, 100%, 1)</complementary_color>
+                <decoration_classes/>
+              </style>
+            </value>
+            <value id="untagged">
+              <code>untagged</code>
+							<style>
+                <main_color>hsla(209, 23.7%, 74.3%, 1)</main_color>
+                <complementary_color>hsla(0, 0%, 100%, 1)</complementary_color>
+								<decoration_classes/>
+							</style>
+            </value>
+          </values>
+          <sql>mode</sql>
+          <default_value>untagged</default_value>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style/>
+        </field>
+      </fields>
+      <methods/>
+      <presentation>
+        <details>
+          <items>
+            <item id="logicalinterface_id">
+              <rank>10</rank>
+            </item>
+            <item id="vlan_id">
+              <rank>20</rank>
+            </item>
+						<item id="mode">
+							<rank>30</rank>
+						</item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="logicalinterface_id">
+              <rank>10</rank>
+            </item>
+            <item id="vlan_id">
+              <rank>20</rank>
+            </item>
+						<item id="mode">
+							<rank>30</rank>
+						</item>
+          </items>
+        </search>
+        <list>
+          <items>
+						<item id="mode">
+							<rank>10</rank>
+						</item>
+            <item id="logicalinterface_id">
+              <rank>20</rank>
+            </item>
+            <item id="vlan_id">
+              <rank>30</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="lnkLogicalInterfaceToVRF" _created_in="teemip-network-mgmt" _delta="define">
+      <parent>cmdbAbstractObject</parent>
+      <properties>
+        <is_link>1</is_link>
+        <category>bizmodel</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>lnklogicalinterfacetovrf</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="logicalinterface_name"/>
+            <attribute id="vrf_name"/>
+          </attributes>
+        </naming>
+        <icon/>
+        <reconciliation>
+          <attributes>
+            <attribute id="logicalinterface_id"/>
+            <attribute id="vrf_id"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules>
+          <rule id="no_duplicate">
+            <attributes>
+              <attribute id="logicalinterface_id"/>
+              <attribute id="vrf_id"/>
+            </attributes>
+            <filter><![CDATA[]]></filter>
+            <disabled>false</disabled>
+            <is_blocking>true</is_blocking>
+          </rule>
+        </uniqueness_rules>
+      </properties>
+      <fields>
+        <field id="logicalinterface_id" xsi:type="AttributeExternalKey">
+          <sql>logicalinterface_id</sql>
+          <target_class>LogicalInterface</target_class>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="logicalinterface_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>logicalinterface_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="logicalinterface_device_id" xsi:type="AttributeExternalField">
+          <extkey_attcode>logicalinterface_id</extkey_attcode>
+          <target_attcode>virtualmachine_id</target_attcode>
+        </field>
+        <field id="logicalinterface_device_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>logicalinterface_id</extkey_attcode>
+          <target_attcode>virtualmachine_name</target_attcode>
+        </field>
+        <field id="vrf_id" xsi:type="AttributeExternalKey">
+          <sql>vrf_id</sql>
+          <target_class>VRF</target_class>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="vrf_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>vrf_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+      </fields>
+      <methods/>
+      <presentation>
+        <details>
+          <items>
+            <item id="logicalinterface_id">
+              <rank>10</rank>
+            </item>
+            <item id="vrf_id">
+              <rank>20</rank>
+            </item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="logicalinterface_id">
+              <rank>10</rank>
+            </item>
+            <item id="vrf_id">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+        <list>
+          <items>
+            <item id="logicalinterface_id">
+              <rank>10</rank>
+            </item>
+            <item id="vrf_id">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="VLAN" _delta="must_exist">
+      <fields>
+        <field id="logicalinterfaces_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
+          <linked_class>lnkLogicalInterfaceToVLAN</linked_class>
+          <ext_key_to_me>vlan_id</ext_key_to_me>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <ext_key_to_remote>logicalinterface_id</ext_key_to_remote>
+          <duplicates/>
+        </field>
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="logicalinterfaces_list" _delta="define">
+              <rank>60</rank>
+            </item>
+          </items>
+        </details>
+      </presentation>
+    </class>
+    <class id="VRF" _delta="must_exist">
+      <fields>
+        <field id="logicalinterfaces_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
+          <linked_class>lnkLogicalInterfaceToVRF</linked_class>
+          <ext_key_to_me>vrf_id</ext_key_to_me>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <ext_key_to_remote>logicalinterface_id</ext_key_to_remote>
+          <duplicates/>
+        </field>
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="logicalinterfaces_list" _delta="define">
+              <rank>60</rank>
+            </item>
+          </items>
+        </details>
+      </presentation>
+    </class>
+  </classes>
+  <menus>
+    <menu id="ConfigManagement:TeemIpNetworking" _delta="must_exist">
+      <definition>
+        <cells>
+          <cell id="teemip_interfaces" _delta="must_exist">
+            <dashlets>
+              <dashlet id="50" xsi:type="DashletBadge" _delta="define">
+                <rank>50</rank>
+                <class>LogicalInterface</class>
+              </dashlet>
+            </dashlets>
+          </cell>
+        </cells>
+      </definition>
+    </menu>
+  </menus>
+  <snippets>
+    <snippet id="TeemIpVirtualizationMgmtAdaptor" _delta="define">
+      <placement>module</placement>
+      <module>teemip-virtualization-mgmt-adaptor</module>
+      <rank>10</rank>
+      <content><![CDATA[
+/************************************************************
+* Plugin to handle DisplayBare methods on non TeemIp classes
+*/
+class TeemIpVirtualizationMgmtAdaptor implements iApplicationUIExtension
+{
+	/**
+	 * @inheritdoc
+	 */
+	public function OnDisplayProperties($oObject, WebPage $oPage, $bEditMode = false)
+	{
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function OnDisplayRelations($oObject, WebPage $oPage, $bEditMode = false)
+	{
+		if ($oObject instanceof VirtualMachine)
+		{
+			if ($oObject->GetDisplayMode() == cmdbAbstractObject::ENUM_DISPLAY_MODE_VIEW) {
+		        $sOQL = "SELECT lnkIPInterfaceToIPAddress AS l JOIN LogicalInterface AS int ON l.ipinterface_id = int.id JOIN VirtualMachine AS vm ON int.virtualmachine_id = vm.id WHERE vm.id = :vm_id";
+		        $oLnkSet =  new CMDBObjectSet(DBObjectSearch::FromOQL($sOQL), array(), array('vm_id' => $oObject->GetKey()));
+				$sName = Dict::Format('Class:VirtualMachine/Tab:ipaddresses_list');
+				$sTitle = Dict::Format('Class:VirtualMachine/Tab:ipaddresses_list+');
+				TeemIp\TeemIp\Extension\Framework\Helper\IPUtils::DisplayTabContent($oPage, $sName, 'ipint_to_ipadd', 'IPAddress', $sTitle, '', $oLnkSet, false);
+		    }
+		}
+		elseif ($oObject instanceof Hypervisor) {
+			if ($oObject->GetDisplayMode() == cmdbAbstractObject::ENUM_DISPLAY_MODE_VIEW) {
+				$iServerId = $oObject->Get('server_id');
+
+	            // Display all physicalInterface associated to the hypervisor's server
+		        $sOQL = "SELECT PhysicalInterface AS p JOIN ConnectableCI AS c ON p.connectableci_id = c.id JOIN Hypervisor AS h ON h.server_id = c.id WHERE h.server_id = :server_id";
+	            $oPhysicalInterface =  new CMDBObjectSet(DBObjectSearch::FromOQL($sOQL), array(), array('server_id' => $iServerId));
+				$sName = Dict::Format('Class:Hypervisor/Tab:physicalinterfaces_list');
+				$sTitle = Dict::Format('Class:Hypervisor/Tab:physicalinterfaces_list+');
+				TeemIp\TeemIp\Extension\Framework\Helper\IPUtils::DisplayTabContent($oPage, $sName, 'physicalinterface', 'PhysicalInterface', $sTitle, '', $oPhysicalInterface, false);
+
+				// Display interfaces' IPs
+	            $sOQL = "SELECT lnkIPInterfaceToIPAddress AS l JOIN PhysicalInterface AS int ON l.ipinterface_id = int.id JOIN ConnectableCI AS c ON int.connectableci_id = c.id WHERE c.id = :ci_id";
+		        $oLnkSet =  new CMDBObjectSet(DBObjectSearch::FromOQL($sOQL), array(), array('ci_id' => $iServerId));
+				$sName = Dict::Format('Class:Hypervisor/Tab:ipaddresses_list');
+				$sTitle = Dict::Format('Class:Hypervisor/Tab:ipaddresses_list+');
+				TeemIp\TeemIp\Extension\Framework\Helper\IPUtils::DisplayTabContent($oPage, $sName, 'ipint_to_ipadd', 'IPAddress', $sTitle, '', $oLnkSet, false);
+	        }
+		}
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function OnFormSubmit($oObject, $sFormPrefix = '')
+	{
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function OnFormCancel($sTempId)
+	{
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function EnumUsedAttributes($oObject) // Not yet implemented
+	{
+		return array();
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function GetIcon($oObject) // Not yet implemented
+	{
+		return '';
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function GetHilightClass($oObject)
+	{
+		return HILIGHT_CLASS_NONE;
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function EnumAllowedActions(DBObjectSet $oSet)
+	{
+		// No action
+		return array();
+	}
+}]]></content>
+    </snippet>
+  </snippets>
+</itop_design>

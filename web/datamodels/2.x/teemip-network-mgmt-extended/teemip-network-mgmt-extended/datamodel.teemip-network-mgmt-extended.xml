@@ -1,0 +1,2683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.1" load="strict">
+  <classes>
+    <class id="InterfaceConnector" _delta="define">
+      <parent>Typology</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>interfaceconnector</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </naming>
+        <icon/>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules>
+          <rule id="name">
+            <attributes>
+              <attribute id="name"/>
+            </attributes>
+            <filter/>
+            <disabled>false</disabled>
+            <is_blocking>true</is_blocking>
+          </rule>
+        </uniqueness_rules>
+      </properties>
+      <fields>
+        <field id="description" xsi:type="AttributeText">
+          <sql>description</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="physicalinterfaces_list" xsi:type="AttributeLinkedSet">
+          <linked_class>PhysicalInterface</linked_class>
+          <ext_key_to_me>interfaceconnector_id</ext_key_to_me>
+          <edit_mode>none</edit_mode>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <duplicates/>
+        </field>
+      </fields>
+      <methods/>
+      <presentation>
+        <details>
+          <items>
+            <item id="physicalinterfaces_list">
+              <rank>10</rank>
+            </item>
+            <item id="name">
+              <rank>20</rank>
+            </item>
+            <item id="description">
+              <rank>30</rank>
+            </item>
+          </items>
+        </details>
+        <list>
+          <items>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+        <default_search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </default_search>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+      </presentation>
+    </class>
+    <class id="Layer2Protocol" _delta="define">
+      <parent>Typology</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>layer2protocol</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </naming>
+        <icon/>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules>
+          <rule id="name">
+            <attributes>
+              <attribute id="name"/>
+            </attributes>
+            <filter/>
+            <disabled>false</disabled>
+            <is_blocking>true</is_blocking>
+          </rule>
+        </uniqueness_rules>
+      </properties>
+      <fields>
+        <field id="description" xsi:type="AttributeText">
+          <sql>description</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="ipinterfaces_list" xsi:type="AttributeLinkedSet">
+          <linked_class>IPInterface</linked_class>
+          <ext_key_to_me>layer2protocol_id</ext_key_to_me>
+          <edit_mode>none</edit_mode>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <duplicates/>
+        </field>
+      </fields>
+      <methods/>
+      <presentation>
+        <details>
+          <items>
+            <item id="ipinterfaces_list">
+              <rank>10</rank>
+            </item>
+            <item id="name">
+              <rank>20</rank>
+            </item>
+            <item id="description">
+              <rank>30</rank>
+            </item>
+          </items>
+        </details>
+        <list>
+          <items>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+        <default_search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </default_search>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+      </presentation>
+    </class>
+    <class id="InterfaceSpeed" _delta="define">
+      <parent>Typology</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>interfacespeed</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </naming>
+        <icon/>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules>
+          <rule id="name">
+            <attributes>
+              <attribute id="name"/>
+            </attributes>
+            <filter/>
+            <disabled>false</disabled>
+            <is_blocking>true</is_blocking>
+          </rule>
+        </uniqueness_rules>
+      </properties>
+      <fields>
+        <field id="description" xsi:type="AttributeText">
+          <sql>description</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="ipinterfaces_list" xsi:type="AttributeLinkedSet">
+          <linked_class>IPInterface</linked_class>
+          <ext_key_to_me>interfacespeed_id</ext_key_to_me>
+          <edit_mode>none</edit_mode>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <duplicates/>
+        </field>
+      </fields>
+      <methods/>
+      <presentation>
+        <details>
+          <items>
+            <item id="ipinterfaces_list">
+              <rank>10</rank>
+            </item>
+            <item id="name">
+              <rank>20</rank>
+            </item>
+            <item id="description">
+              <rank>30</rank>
+            </item>
+          </items>
+        </details>
+        <list>
+          <items>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+        <default_search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </default_search>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+      </presentation>
+    </class>
+    <class id="IPInterface" _delta="must_exist">
+      <fields>
+        <field id="speed" xsi:type="AttributeDecimal" _delta="delete"/>
+        <field id="interfacespeed_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>interfacespeed_id</sql>
+          <target_class>InterfaceSpeed</target_class>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="interfacespeed_name" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>interfacespeed_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="layer2protocol_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>layer2protocol_id</sql>
+          <target_class>Layer2Protocol</target_class>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="layer2protocol_name" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>layer2protocol_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="speed" _delta="delete"/>
+          </items>
+        </details>
+        <list>
+          <items>
+            <item id="speed" _delta="delete"/>
+            <item id="interfacespeed_id" _delta="define">
+              <rank>70</rank>
+            </item>
+            <item id="layer2protocol_id" _delta="define">
+              <rank>80</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="PhysicalInterface" _delta="must_exist">
+      <fields>
+        <field id="interfaceconnector_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>interfaceconnector_id</sql>
+          <target_class>InterfaceConnector</target_class>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="interfaceconnector_name" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>interfaceconnector_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="aggregatelink_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>aggregatelink_id</sql>
+          <target_class>AggregateLink</target_class>
+          <filter><![CDATA[SELECT AggregateLink WHERE connectableci_id = :this->connectableci_id]]></filter>
+          <dependencies>
+            <attribute id="connectableci_id"/>
+          </dependencies>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="aggregatelink_name" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>aggregatelink_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="col:col1" _delta="must_exist">
+              <items>
+                <item id="fieldset:Class:NetworkInterface:baseinfo" _delta="must_exist">
+                  <items>
+                    <item id="aggregatelink_id" _delta="define">
+                      <rank>35</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:col2" _delta="must_exist">
+              <items>
+                 <item id="fieldset:Class:NetworkInterface:wiringinfo" _delta="merge">
+                  <rank _delta="define_if_not_exists">5</rank>
+                  <items>
+                    <item id="interfaceconnector_id" _delta="define">
+                      <rank>10</rank>
+                    </item>
+                  </items>
+                </item>
+               <item id="fieldset:Class:NetworkInterface:moreinfo" _delta="must_exist">
+                  <items>
+                    <item id="speed" _delta="delete"/>
+                    <item id="interfacespeed_id" _delta="define">
+                      <rank>20</rank>
+                    </item>
+                    <item id="layer2protocol_id" _delta="define">
+                      <rank>30</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <default_search>
+          <items>
+            <item id="interfacespeed_id" _delta="define">
+              <rank>50</rank>
+            </item>
+          </items>
+        </default_search>
+        <list>
+          <items>
+            <item id="speed" _delta="delete"/>
+            <item id="interfacespeed_id" _delta="define">
+              <rank>10</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="NetworkDeviceVirtualInterface" _delta="must_exist">
+      <presentation>
+        <details>
+          <items>
+            <item id="col:col2" _delta="must_exist">
+              <items>
+                <item id="fieldset:Class:NetworkInterface:moreinfo" _delta="must_exist">
+                  <items>
+                    <item id="speed" _delta="delete"/>
+                    <item id="interfacespeed_id" _delta="define">
+                      <rank>20</rank>
+                    </item>
+                    <item id="layer2protocol_id" _delta="define">
+                      <rank>30</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <list>
+          <items>
+            <item id="speed" _delta="delete"/>
+            <item id="interfacespeed_id" _delta="define">
+              <rank>40</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="NetworkDeviceComponent" _delta="define">
+      <parent>PhysicalDevice</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>networkdevicecomponent</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="name"/>
+            <attribute id="networkdevice_name"/>
+          </attributes>
+        </naming>
+        <style>
+          <icon>asset/img/icons8-slave-48.png</icon>
+        </style>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+            <attribute id="networkdevice_id"/>
+            <attribute id="networkdevice_name"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules/>
+      </properties>
+      <fields>
+        <field id="networkdevice_id" xsi:type="AttributeExternalKey">
+          <sql>networkdevice_id</sql>
+          <target_class>NetworkDevice</target_class>
+          <filter><![CDATA[SELECT NetworkDevice WHERE org_id = :this->org_id]]></filter>
+          <dependencies>
+            <attribute id="org_id"/>
+          </dependencies>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="networkdevice_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>networkdevice_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+      </fields>
+      <methods/>
+      <presentation>
+        <details>
+          <items>
+            <item id="contacts_list">
+              <rank>10</rank>
+            </item>
+            <item id="documents_list">
+              <rank>20</rank>
+            </item>
+            <item id="col:col1">
+              <rank>40</rank>
+              <items>
+                <item id="fieldset:Class:NetworkDeviceComponent:baseinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="name">
+                      <rank>10</rank>
+                    </item>
+                    <item id="org_id">
+                      <rank>20</rank>
+                    </item>
+                    <item id="status">
+                      <rank>30</rank>
+                    </item>
+                    <item id="business_criticity">
+                      <rank>40</rank>
+                    </item>
+                    <item id="location_id">
+                      <rank>50</rank>
+                    </item>
+                    <item id="networkdevice_id">
+                      <rank>60</rank>
+                    </item>
+                  </items>
+                </item>
+                <item id="fieldset:Class:NetworkDeviceComponent:moreinfo">
+                  <rank>20</rank>
+                  <items>
+                    <item id="brand_id">
+                      <rank>10</rank>
+                    </item>
+                    <item id="model_id">
+                      <rank>20</rank>
+                    </item>
+                    <item id="serialnumber">
+                      <rank>30</rank>
+                    </item>
+                    <item id="asset_number">
+                      <rank>40</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:col2">
+              <rank>130</rank>
+              <items>
+                <item id="fieldset:Class:NetworkDeviceComponent:Date">
+                  <rank>10</rank>
+                  <items>
+                    <item id="move2production">
+                      <rank>10</rank>
+                    </item>
+                    <item id="purchase_date">
+                      <rank>20</rank>
+                    </item>
+                    <item id="end_of_warranty">
+                      <rank>30</rank>
+                    </item>
+                  </items>
+                </item>
+                <item id="fieldset:Class:NetworkDeviceComponent:otherinfo">
+                  <rank>30</rank>
+                  <items>
+                    <item id="description">
+                      <rank>10</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="status">
+              <rank>30</rank>
+            </item>
+            <item id="business_criticity">
+              <rank>40</rank>
+            </item>
+            <item id="location_id">
+              <rank>50</rank>
+            </item>
+            <item id="brand_id">
+              <rank>60</rank>
+            </item>
+            <item id="model_id">
+              <rank>70</rank>
+            </item>
+            <item id="serialnumber">
+              <rank>80</rank>
+            </item>
+            <item id="asset_number">
+              <rank>90</rank>
+            </item>
+            <item id="move2production">
+              <rank>120</rank>
+            </item>
+            <item id="purchase_date">
+              <rank>130</rank>
+            </item>
+            <item id="end_of_warranty">
+              <rank>140</rank>
+            </item>
+          </items>
+        </search>
+        <list>
+          <items>
+            <item id="org_id">
+              <rank>10</rank>
+            </item>
+            <item id="status">
+              <rank>20</rank>
+            </item>
+            <item id="business_criticity">
+              <rank>30</rank>
+            </item>
+            <item id="location_id">
+              <rank>40</rank>
+            </item>
+            <item id="brand_id">
+              <rank>50</rank>
+            </item>
+            <item id="model_id">
+              <rank>60</rank>
+            </item>
+            <item id="serialnumber">
+              <rank>70</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="ClusterNetwork" _delta="define">
+      <parent>FunctionalCI</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>clusternetwork</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </naming>
+        <style>
+          <icon>asset/img/icons8-stack.png</icon>
+        </style>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+            <attribute id="org_id"/>
+            <attribute id="organization_name"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules/>
+      </properties>
+      <fields>
+        <field id="status" xsi:type="AttributeEnum">
+          <values>
+            <value id="production">
+              <code>production</code>
+            </value>
+            <value id="implementation">
+              <code>implementation</code>
+            </value>
+          </values>
+          <sql>status</sql>
+          <default_value>production</default_value>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>list</display_style>
+        </field>
+        <field id="type" xsi:type="AttributeEnum">
+          <values>
+            <value id="loadbalancing">
+              <code>loadbalancing</code>
+            </value>
+            <value id="highavailability">
+              <code>highavailability</code>
+            </value>
+            <value id="highperformance">
+              <code>highperformance</code>
+            </value>
+          </values>
+          <sql>type</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>list</display_style>
+        </field>
+        <field id="mode" xsi:type="AttributeEnum">
+          <values>
+            <value id="active_standby">
+              <code>active_standby</code>
+            </value>
+            <value id="active_passive">
+              <code>active_passive</code>
+            </value>
+            <value id="active_active">
+              <code>active_active</code>
+            </value>
+          </values>
+          <sql>mode</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>list</display_style>
+        </field>
+        <field id="networkdevices_list" xsi:type="AttributeLinkedSet">
+          <linked_class>NetworkDevice</linked_class>
+          <ext_key_to_me>clusternetwork_id</ext_key_to_me>
+          <edit_mode>add_remove</edit_mode>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <duplicates/>
+        </field>
+        <field id="ips_list" xsi:type="AttributeLinkedSetIndirect">
+          <linked_class>lnkClusterNetworkToIPAddress</linked_class>
+          <ext_key_to_me>clusternetwork_id</ext_key_to_me>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <ext_key_to_remote>ipaddress_id</ext_key_to_remote>
+          <duplicates/>
+        </field>
+        <field id="redundancy" xsi:type="AttributeRedundancySettings">
+          <sql>redundancy</sql>
+          <relation_code>impacts</relation_code>
+          <from_class>NetworkDevice</from_class>
+          <neighbour_id>clusternetwork</neighbour_id>
+          <enabled>true</enabled>
+          <enabled_mode>user</enabled_mode>
+          <min_up>1</min_up>
+          <min_up_type>count</min_up_type>
+          <min_up_mode>user</min_up_mode>
+        </field>
+        <field id="replacement_date" xsi:type="AttributeDate">
+          <sql>replacement_date</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+      </fields>
+      <methods>
+        <method id="DisplayBareRelations" _delta="define">
+          <comment/>
+          <static>false</static>
+          <access>public</access>
+          <type>Custom</type>
+          <code><![CDATA[ public function DisplayBareRelations(WebPage $oP, $bEditMode = false)
+    {
+        // Execute parent function first
+        parent::DisplayBareRelations($oP, $bEditMode);
+
+        if (!$bEditMode)
+        {
+           // Search for ConnectableCIs linked to NetworkDevices that make the cluster
+            $sOQL = "SELECT ConnectableCI AS c JOIN lnkConnectableCIToNetworkDevice AS l ON l.connectableci_id = c.id JOIN NetworkDevice AS nd ON l.networkdevice_id = nd.id JOIN ClusterNetwork AS cn ON nd.clusternetwork_id = cn.id WHERE cn.id = :id AND l.connection_type='downlink'";
+            $oConnectableCIsSet =  new CMDBObjectSet(DBObjectSearch::FromOQL($sOQL), array(), array('id' => $this->GetKey()));
+            $sName = Dict::S('Class:ClusterNetwork/Tab:connectablecis_list');
+            $sTitle = Dict::S('Class:ClusterNetwork/Tab:connectablecis_list+');
+            TeemIp\TeemIp\Extension\Framework\Helper\IPUtils::DisplayTabContent($oP, $sName, 'connectable_cis', 'ConnectableCI', $sTitle, '', $oConnectableCIsSet, false);
+       }
+    }]]></code>
+        </method>
+      </methods>
+      <relations>
+        <relation id="impacts">
+          <neighbours>
+            <neighbour id="connectableci">
+              <query_up>SELECT ClusterNetwork AS cn JOIN NetworkDevice AS nd ON nd.clusternetwork_id = cn.id JOIN lnkConnectableCIToNetworkDevice AS l ON l.networkdevice_id = nd.id WHERE l.connectableci_id = :this->id AND l.connection_type='downlink'</query_up>
+              <query_down>SELECT ConnectableCI AS c JOIN lnkConnectableCIToNetworkDevice AS l ON l.connectableci_id = c.id JOIN NetworkDevice AS nd ON l.networkdevice_id = nd.id JOIN ClusterNetwork AS cn ON nd.clusternetwork_id = cn.id WHERE cn.id = :this->id AND l.connection_type='downlink'</query_down>
+            </neighbour>
+          </neighbours>
+        </relation>
+      </relations>
+      <presentation>
+        <details>
+          <items>
+            <item id="contacts_list">
+              <rank>10</rank>
+            </item>
+            <item id="documents_list">
+              <rank>20</rank>
+            </item>
+            <item id="applicationsolution_list">
+              <rank>35</rank>
+            </item>
+            <item id="networkdevices_list">
+              <rank>50</rank>
+            </item>
+            <item id="ips_list">
+              <rank>60</rank>
+            </item>
+            <item id="col:col1">
+              <rank>90</rank>
+              <items>
+                <item id="fieldset:Class:ClusterNetwork:baseinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="name">
+                      <rank>10</rank>
+                    </item>
+                    <item id="org_id">
+                      <rank>20</rank>
+                    </item>
+                    <item id="status">
+                      <rank>30</rank>
+                    </item>
+                    <item id="business_criticity">
+                      <rank>40</rank>
+                    </item>
+                  </items>
+                </item>
+                <item id="fieldset:Class:ClusterNetwork:moreinfo">
+                  <rank>20</rank>
+                  <items>
+                    <item id="type">
+                      <rank>10</rank>
+                    </item>
+                    <item id="mode">
+                      <rank>20</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:col2">
+              <rank>110</rank>
+              <items>
+                <item id="fieldset:Class:ClusterNetwork:Date">
+                  <rank>10</rank>
+                  <items>
+                    <item id="move2production">
+                      <rank>10</rank>
+                    </item>
+                    <item id="replacement_date">
+                      <rank>20</rank>
+                    </item>
+                  </items>
+                </item>
+                <item id="fieldset:Class:ClusterNetwork:otherinfo">
+                  <rank>30</rank>
+                  <items>
+                    <item id="description">
+                      <rank>10</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="status">
+              <rank>30</rank>
+            </item>
+            <item id="business_criticity">
+              <rank>40</rank>
+            </item>
+            <item id="type">
+              <rank>60</rank>
+            </item>
+            <item id="mode">
+              <rank>70</rank>
+            </item>
+            <item id="move2production">
+              <rank>80</rank>
+            </item>
+            <item id="replacement_date">
+              <rank>90</rank>
+            </item>
+          </items>
+        </search>
+        <default_search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="status">
+              <rank>30</rank>
+            </item>
+            <item id="business_criticity">
+              <rank>40</rank>
+            </item>
+            <item id="type">
+              <rank>60</rank>
+            </item>
+            <item id="mode">
+              <rank>70</rank>
+            </item>
+            <item id="move2production">
+              <rank>80</rank>
+            </item>
+          </items>
+        </default_search>
+        <list>
+          <items>
+            <item id="org_id">
+              <rank>10</rank>
+            </item>
+            <item id="status">
+              <rank>20</rank>
+            </item>
+            <item id="business_criticity">
+              <rank>30</rank>
+            </item>
+            <item id="type">
+              <rank>50</rank>
+            </item>
+            <item id="mode">
+              <rank>60</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="lnkClusterNetworkToIPAddress" _delta="define">
+      <parent>cmdbAbstractObject</parent>
+      <properties>
+        <is_link>1</is_link>
+        <category>bizmodel,ipmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>lnkclusternetworktoipaddress</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="clusternetwork_name"/>
+            <attribute id="ipaddress_fqdn"/>
+          </attributes>
+        </naming>
+        <icon/>
+        <reconciliation>
+          <attributes>
+            <attribute id="clusternetwork_id"/>
+            <attribute id="ipaddress_id"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules>
+          <rule id="no_duplicate">
+            <attributes>
+              <attribute id="clusternetwork_id"/>
+              <attribute id="ipaddress_id"/>
+            </attributes>
+            <filter><![CDATA[]]></filter>
+            <disabled>false</disabled>
+            <is_blocking>true</is_blocking>
+          </rule>
+        </uniqueness_rules>
+      </properties>
+      <fields>
+        <field id="clusternetwork_id" xsi:type="AttributeExternalKey">
+          <sql>clusternetwork_id</sql>
+          <target_class>ClusterNetwork</target_class>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+          <jointype/>
+        </field>
+        <field id="clusternetwork_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>clusternetwork_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="ipaddress_id" xsi:type="AttributeExternalKey">
+          <sql>ipaddress_id</sql>
+          <target_class>IPAddress</target_class>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+          <jointype/>
+        </field>
+        <field id="usage_id" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>ipaddress_id</extkey_attcode>
+          <target_attcode>usage_id</target_attcode>
+        </field>
+        <field id="ipaddress_fqdn" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>ipaddress_id</extkey_attcode>
+          <target_attcode>fqdn</target_attcode>
+        </field>
+      </fields>
+      <methods>
+        <method id="AfterInsert" _delta="define">
+          <comment/>
+          <static>false</static>
+          <access>public</access>
+          <type>Custom</type>
+          <code><![CDATA[ public function AfterInsert()
+    {
+        // Execute parent function first
+        parent::AfterInsert();
+
+        TeemIp\TeemIp\Extension\IPManagement\Model\_IPAddress::SetStatusOnAttachment($this->Get('ipaddress_id'));
+    }]]></code>
+        </method>
+        <method id="AfterDelete" _delta="define">
+          <comment/>
+          <static>false</static>
+          <access>public</access>
+          <type>Custom</type>
+          <code><![CDATA[ public function AfterDelete()
+    {
+        // Execute parent function first
+        parent::AfterDelete();
+
+        TeemIp\TeemIp\Extension\IPManagement\Model\_IPAddress::SetStatusOnDetachment($this->Get('ipaddress_id'));
+    }]]></code>
+        </method>
+      </methods>
+      <presentation>
+        <details>
+          <items>
+            <item id="clusternetwork_id">
+              <rank>10</rank>
+            </item>
+            <item id="ipaddress_id">
+              <rank>20</rank>
+            </item>
+          </items>
+        </details>
+        <search>
+          <items>
+            <item id="clusternetwork_id">
+              <rank>10</rank>
+            </item>
+            <item id="ipaddress_id">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+        <list>
+          <items>
+            <item id="clusternetwork_id">
+              <rank>10</rank>
+            </item>
+            <item id="ipaddress_id">
+              <rank>20</rank>
+            </item>
+            <item id="usage_id">
+              <rank>30</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="NetworkDevice" _delta="must_exist">
+      <fields>
+        <field id="clusternetwork_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>clusternetwork_id</sql>
+          <target_class>ClusterNetwork</target_class>
+          <filter><![CDATA[SELECT ClusterNetwork WHERE org_id = :this->org_id]]></filter>
+          <dependencies>
+            <attribute id="org_id"/>
+          </dependencies>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="clusternetwork_name" xsi:type="AttributeExternalField" _delta="define">
+          <extkey_attcode>clusternetwork_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="clusternetwork_role" xsi:type="AttributeEnum" _delta="define">
+          <values>
+            <value id="active">
+              <code>active</code>
+            </value>
+            <value id="standby">
+              <code>standby</code>
+            </value>
+          </values>
+          <sql>clusternetwork_role</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>radio_horizontal</display_style>
+        </field>
+        <field id="networkdevicecomponents_list" xsi:type="AttributeLinkedSet" _delta="define">
+          <linked_class>NetworkDeviceComponent</linked_class>
+          <ext_key_to_me>networkdevice_id</ext_key_to_me>
+          <edit_mode>add_remove</edit_mode>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <duplicates/>
+        </field>
+        <field id="aggregatelinks_list" xsi:type="AttributeLinkedSet" _delta="define">
+          <linked_class>AggregateLink</linked_class>
+          <ext_key_to_me>connectableci_id</ext_key_to_me>
+          <edit_mode>add_remove</edit_mode>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <duplicates/>
+        </field>
+        <field id="snmpcredentials_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>snmpcredentials_id</sql>
+          <target_class>SnmpCredentials</target_class>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="replacement_date" xsi:type="AttributeDate" _delta="define_if_not_exists">
+          <sql>replacement_date</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+      </fields>
+      <relations>
+        <relation id="impacts">
+          <neighbours>
+            <neighbour id="clusternetwork" _delta="define">
+              <attribute>clusternetwork_id</attribute>
+            </neighbour>
+            <neighbour id="connectableci" _delta="redefine">
+             <query_down>SELECT ConnectableCI AS d JOIN lnkConnectableCIToNetworkDevice AS l1 ON l1.connectableci_id = d.id JOIN NetworkDevice AS nd ON l1.networkdevice_id = nd.id WHERE nd.id = :this->id AND l1.connection_type='downlink' AND nd.id NOT IN (SELECT NetworkDevice AS nd WHERE nd.clusternetwork_id != 0)</query_down>
+             <query_up>SELECT NetworkDevice AS nw JOIN lnkConnectableCIToNetworkDevice AS l1 ON l1.networkdevice_id = nw.id WHERE l1.connectableci_id = :this->id AND l1.connection_type='downlink' AND nw.clusternetwork_id =0</query_up>
+           </neighbour>
+          </neighbours>
+        </relation>
+      </relations>
+      <presentation>
+        <details>
+          <items>
+            <item id="networkdevicecomponents_list" _delta="define">
+              <rank>35</rank>
+            </item>
+            <item id="aggregatelinks_list" _delta="define">
+              <rank>47</rank>
+            </item>
+            <item id="col:col1" _delta="must_exist">
+              <items>
+                <item id="fieldset:Server:baseinfo" _delta="must_exist">
+                  <items>
+                    <item id="clusternetwork_id" _delta="define">
+                      <rank>80</rank>
+                    </item>
+                    <item id="clusternetwork_role" _delta="define">
+                      <rank>90</rank>
+                    </item>
+                  </items>
+                </item>
+                <item id="fieldset:Server:moreinfo" _delta="must_exist">
+                  <items>
+                    <item id="snmpcredentials_id" _delta="define">
+                      <rank>47</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:col2" _delta="must_exist">
+              <items>
+                <item id="fieldset:Server:Date" _delta="must_exist">
+                  <items>
+                    <item id="replacement_date" _delta="define_if_not_exists">
+                      <rank>60</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <list>
+          <items>
+            <item id="clusternetwork_role" _delta="define">
+              <rank>200</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="Model" _delta="must_exist">
+      <properties>
+        <fields_semantic>
+          <image_attribute _delta="define_if_not_exists">picture</image_attribute>
+        </fields_semantic>
+      </properties>
+      <fields>
+        <field id="picture" xsi:type="AttributeImage" _delta="define_if_not_exists">
+          <display_max_width>256</display_max_width>
+          <display_max_height>256</display_max_height>
+          <storage_max_width>512</storage_max_width>
+          <storage_max_height>512</storage_max_height>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="type" xsi:type="AttributeEnum" _delta="must_exist">
+          <values _delta="must_exist">
+            <value id="NetworkDeviceComponent" _delta="define">
+              <code>NetworkDeviceComponent</code>
+            </value>
+          </values>
+        </field>
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="picture" _delta="define_if_not_exists">
+              <rank>30</rank>
+            </item>
+          </items>
+        </details>
+        <summary>
+          <items>
+            <item id="picture" _delta="define_if_not_exists">
+              <rank>30</rank>
+            </item>
+          </items>
+        </summary>
+      </presentation>
+    </class>
+    <class id="AggregateLink" _delta="define">
+      <parent>NetworkInterface</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>aggregatelink</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="name"/>
+            <attribute id="connectableci_name"/>
+          </attributes>
+        </naming>
+        <style>
+          <icon>asset/img/icons8-bursts-48.png</icon>
+        </style>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+            <attribute id="connectableci_id"/>
+            <attribute id="connectableci_name"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules/>
+      </properties>
+      <fields>
+        <field id="macaddress" xsi:type="AttributeMacAddress">
+          <sql>macaddress</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="layer2protocol_id" xsi:type="AttributeExternalKey">
+          <sql>layer2protocol_id</sql>
+          <target_class>Layer2Protocol</target_class>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="layer2protocol_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>layer2protocol_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="status" xsi:type="AttributeEnum">
+          <values>
+            <value id="active">
+              <code>active</code>
+            </value>
+            <value id="inactive">
+              <code>inactive</code>
+            </value>
+          </values>
+          <sql>status</sql>
+          <default_value>active</default_value>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>radio_horizontal</display_style>
+        </field>
+        <field id="description" xsi:type="AttributeText">
+          <sql>description</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="connectableci_id" xsi:type="AttributeExternalKey">
+          <sql>connectableci_id</sql>
+          <target_class>ConnectableCI</target_class>
+          <filter><![CDATA[SELECT ConnectableCI WHERE finalclass IN ('NetworkDevice')]]></filter>
+          <dependencies/>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="connectableci_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>connectableci_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="org_id" xsi:type="AttributeExternalField">
+          <extkey_attcode>connectableci_id</extkey_attcode>
+          <target_attcode>org_id</target_attcode>
+        </field>
+        <field id="location_id" xsi:type="AttributeExternalField">
+          <extkey_attcode>connectableci_id</extkey_attcode>
+          <target_attcode>location_id</target_attcode>
+        </field>
+        <field id="peer_id" xsi:type="AttributeExternalKey">
+          <sql>peer_id</sql>
+          <target_class>AggregateLink</target_class>
+          <filter><![CDATA[SELECT AggregateLink WHERE id != :this->id AND peer_id = 0]]></filter>
+          <dependencies/>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="peer_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>peer_id</extkey_attcode>
+          <target_attcode>friendlyname</target_attcode>
+        </field>
+        <field id="physicalinterfaces_list" xsi:type="AttributeLinkedSet">
+          <linked_class>PhysicalInterface</linked_class>
+          <ext_key_to_me>aggregatelink_id</ext_key_to_me>
+          <edit_mode>add_remove</edit_mode>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <duplicates/>
+        </field>
+      </fields>
+      <methods>
+        <method id="AfterInsert" _delta="define">
+          <comment/>
+          <static>false</static>
+          <access>public</access>
+          <type>Overload-DBObject</type>
+          <code><![CDATA[	public function AfterInsert()
+    {
+        parent::AfterInsert();
+
+        $iPeerId = $this->Get('peer_id');
+        if ($iPeerId > 0)
+        {
+            $oPeer = MetaModel::GetObject('AggregateLink', $iPeerId, false);
+            if (!is_null($oPeer))
+            {
+                $oPeer->Set('peer_id', $this->GetKey());
+                $oPeer->DBUpdate();
+            }
+        }
+	}]]></code>
+        </method>
+        <method id="AfterUpdate" _delta="define">
+          <comment/>
+          <static>false</static>
+          <access>public</access>
+          <type>Overload-DBObject</type>
+          <code><![CDATA[	public function AfterUpdate()
+    {
+        parent::AfterUpdate();
+
+		$aListChanges = $this->ListPreviousValuesForUpdatedAttributes();
+        if (array_key_exists('peer_id', $aListChanges))
+        {
+            // Reset peer on old remote
+            $iPreviousPeerId = $aListChanges['peer_id'];
+            if ($iPreviousPeerId > 0)
+            {
+                $oPreviousPeer = MetaModel::GetObject('AggregateLink', $iPreviousPeerId, false);
+                if (!is_null($oPreviousPeer))
+                {
+                    $oPreviousPeer->Set('peer_id', 0);
+                    $oPreviousPeer->DBUpdate();
+                }
+            }
+            // Set peeron new remote
+            $iPeerId = $this->Get('peer_id');
+            if ($iPeerId > 0)
+            {
+                $oPeer = MetaModel::GetObject('AggregateLink', $iPeerId, false);
+                if (!is_null($oPeer))
+                {
+                    $oPeer->Set('peer_id', $this->GetKey());
+                    $oPeer->DBUpdate();
+                }
+            }
+        }
+	}]]></code>
+        </method>
+        <method id="AfterDelete" _delta="define">
+          <comment/>
+          <static>false</static>
+          <access>public</access>
+          <type>Overload-DBObject</type>
+          <code><![CDATA[	public function AfterDelete()
+    {
+        parent::AfterDelete();
+
+        $iPeerId = $this->Get('peer_id');
+        if ($iPeerId > 0)
+        {
+            $oPeer = MetaModel::GetObject('AggregateLink', $iPeerId, false);
+            if (!is_null($oPeer))
+            {
+                $oPeer->Set('peer_id', 0);
+                $oPeer->DBUpdate();
+            }
+        }
+	}]]></code>
+        </method>
+        <method id="GetAttributeParams" _delta="define">
+          <comment/>
+          <static>false</static>
+          <access>public</access>
+          <type>Overload-DBObject</type>
+          <code><![CDATA[	public function GetAttributeParams($sAttCode)
+    {
+        if ($sAttCode == 'macaddress')
+	    {
+			return('colons');
+	    }
+	    return '';
+	}]]></code>
+        </method>
+      </methods>
+      <presentation>
+        <details>
+          <items>
+          <item id="physicalinterfaces_list">
+            <rank>10</rank>
+          </item>
+          <item id="col:col1">
+            <rank>20</rank>
+            <items>
+              <item id="fieldset:Class:AggregateLink:baseinfo">
+                <rank>10</rank>
+                <items>
+                  <item id="name">
+                    <rank>20</rank>
+                  </item>
+                  <item id="macaddress">
+                    <rank>30</rank>
+                  </item>
+                  <item id="layer2protocol_id">
+                    <rank>40</rank>
+                  </item>
+                  <item id="status">
+                    <rank>50</rank>
+                  </item>
+                  <item id="connectableci_id">
+                    <rank>60</rank>
+                  </item>
+                  <item id="location_id">
+                    <rank>62</rank>
+                  </item>
+                  <item id="org_id">
+                    <rank>63</rank>
+                  </item>
+                  <item id="peer_id">
+                    <rank>70</rank>
+                  </item>
+                  <item id="description">
+                    <rank>80</rank>
+                  </item>
+                </items>
+              </item>
+            </items>
+          </item>
+        </items>
+        </details>
+        <list>
+          <items>
+            <item id="macaddress">
+              <rank>10</rank>
+            </item>
+            <item id="layer2protocol_id">
+              <rank>20</rank>
+            </item>
+            <item id="status">
+              <rank>30</rank>
+            </item>
+            <item id="connectableci_id">
+              <rank>40</rank>
+            </item>
+            <item id="peer_id">
+              <rank>50</rank>
+            </item>
+            <item id="org_id">
+              <rank>52</rank>
+            </item>
+          </items>
+        </list>
+        <default_search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="macaddress">
+              <rank>20</rank>
+            </item>
+            <item id="layer2protocol_id">
+              <rank>30</rank>
+            </item>
+            <item id="status">
+              <rank>40</rank>
+            </item>
+            <item id="org_id">
+              <rank>42</rank>
+            </item>
+          </items>
+        </default_search>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="macaddress">
+              <rank>20</rank>
+            </item>
+            <item id="layer2protocol_id">
+              <rank>30</rank>
+            </item>
+            <item id="status">
+              <rank>40</rank>
+            </item>
+          </items>
+        </search>
+      </presentation>
+    </class>
+    <class id="NetworkInterface" _created_in="itop-config-mgmt" _delta="must_exist">
+      <fields>
+        <field id="operational_status" xsi:type="AttributeMetaEnum" _delta="must_exist">
+          <mappings>
+            <mapping id="AggregateLink" _delta="define">
+              <attcode>status</attcode>
+              <metavalues>
+                <metavalue id="active">
+                  <values>
+                    <value id="active"/>
+                  </values>
+                </metavalue>
+                <metavalue id="inactive">
+                  <values>
+                    <value id="inactive"/>
+                  </values>
+                </metavalue>
+              </metavalues>
+            </mapping>
+          </mappings>
+        </field>
+      </fields>
+      <presentation>
+        <details _delta="redefine">
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="operational_status">
+              <rank>20</rank>
+            </item>
+          </items>
+        </details>
+        <default_search _delta="redefine">
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="operational_status">
+              <rank>20</rank>
+            </item>
+          </items>
+        </default_search>
+        <search _delta="redefine">
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="operational_status">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+        <list _delta="redefine">
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="operational_status">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="VLAN" _delta="must_exist">
+      <fields>
+        <field id="vlan_tag" xsi:type="AttributeInteger" _delta="redefine">
+          <sql>vlan_tag</sql>
+          <default_value/>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+        <field id="name" xsi:type="AttributeString" _delta="define">
+          <sql>name</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="type" xsi:type="AttributeEnum" _delta="define">
+          <values>
+            <value id="port_based">
+              <code>port_based</code>
+            </value>
+            <value id="mac_based">
+              <code>mac_based</code>
+            </value>
+            <value id="network_based">
+              <code>network_based</code>
+            </value>
+            <value id="protocol_based">
+              <code>protocol_based</code>
+            </value>
+          </values>
+          <sql>type</sql>
+          <default_value>network_based</default_value>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="status" xsi:type="AttributeEnum" _delta="define">
+          <values>
+            <value id="used">
+              <code>used</code>
+            </value>
+            <value id="unused">
+              <code>unused</code>
+            </value>
+            <value id="reserved">
+              <code>reserved</code>
+            </value>
+          </values>
+          <sql>status</sql>
+          <default_value>used</default_value>
+          <is_null_allowed>flase</is_null_allowed>
+        </field>
+      </fields>
+      <presentation>
+        <details _delta="redefine">
+          <items>
+            <item id="col:col1">
+              <rank>10</rank>
+              <items>
+                <item id="fieldset:Class:VLAN:baseinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="vlan_tag">
+                      <rank>10</rank>
+                    </item>
+                    <item id="name">
+                      <rank>20</rank>
+                    </item>
+                    <item id="org_id">
+                      <rank>30</rank>
+                    </item>
+                    <item id="status">
+                      <rank>40</rank>
+                    </item>
+                    <item id="type">
+                      <rank>50</rank>
+                    </item>
+                    <item id="description">
+                      <rank>60</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="subnets_list">
+              <rank>20</rank>
+            </item>
+            <item id="physicalinterfaces_list">
+              <rank>30</rank>
+            </item>
+            <item id="networkdevicevirtualinterfaces_list">
+              <rank>70</rank>
+            </item>
+          </items>
+        </details>
+        <default_search _delta="redefine">
+          <items>
+            <item id="vlan_tag">
+              <rank>10</rank>
+            </item>
+            <item id="name">
+              <rank>20</rank>
+            </item>
+            <item id="org_id">
+              <rank>30</rank>
+            </item>
+            <item id="status">
+              <rank>40</rank>
+            </item>
+            <item id="type">
+              <rank>50</rank>
+            </item>
+          </items>
+        </default_search>
+        <search _delta="redefine">
+          <items>
+            <item id="vlan_tag">
+              <rank>10</rank>
+            </item>
+            <item id="name">
+              <rank>20</rank>
+            </item>
+            <item id="org_id">
+              <rank>30</rank>
+            </item>
+            <item id="status">
+              <rank>40</rank>
+            </item>
+            <item id="type">
+              <rank>50</rank>
+            </item>
+          </items>
+        </search>
+        <list _delta="redefine">
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="status">
+              <rank>30</rank>
+            </item>
+            <item id="type">
+              <rank>40</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="SnmpCredentials" _delta="define">
+      <parent>cmdbAbstractObject</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <db_table>snmpcredentials</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </naming>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+            <attribute id="org_id"/>
+          </attributes>
+        </reconciliation>
+        <style>
+          <icon>asset/img/icons8-switch-48-lock.png</icon>
+        </style>
+      </properties>
+      <fields>
+        <field id="org_id" xsi:type="AttributeExternalKey">
+          <sql>org_id</sql>
+          <target_class>Organization</target_class>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_MANUAL</on_target_delete>
+        </field>
+        <field id="org_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>org_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="description" xsi:type="AttributeText">
+          <sql>description</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="name" xsi:type="AttributeString">
+          <sql>name</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="community" xsi:type="AttributePassword">
+          <sql>community</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <dependencies>
+            <attribute id="security_level"/>
+          </dependencies>
+        </field>
+        <field id="device_list" xsi:type="AttributeLinkedSet">
+          <linked_class>NetworkDevice</linked_class>
+          <ext_key_to_me>snmpcredentials_id</ext_key_to_me>
+          <edit_mode>none</edit_mode>
+        </field>
+        <field id="security_level" xsi:type="AttributeEnum">
+          <sql>security_level</sql>
+          <values>
+            <value id="noAuthNoPriv">
+              <code>noAuthNoPriv</code>
+              <rank>1</rank>
+            </value>
+            <value id="authNoPriv">
+              <code>authNoPriv</code>
+              <rank>2</rank>
+            </value>
+            <value id="authPriv">
+              <code>authPriv</code>
+              <rank>3</rank>
+            </value>
+          </values>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>list</display_style>
+          <sort_type>rank</sort_type>
+        </field>
+        <field id="security_name" xsi:type="AttributeString">
+          <sql>security_name</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <dependencies>
+            <attribute id="security_level"/>
+          </dependencies>
+        </field>
+        <field id="auth_protocol" xsi:type="AttributeEnum">
+          <sql>auth_protocol</sql>
+          <values>
+            <value id="md5">
+              <code>md5</code>
+              <rank>1</rank>
+            </value>
+            <value id="sha">
+              <code>sha</code>
+              <rank>2</rank>
+            </value>
+          </values>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>list</display_style>
+          <sort_type>rank</sort_type>
+          <dependencies>
+            <attribute id="security_level"/>
+          </dependencies>
+        </field>
+        <field id="auth_passphrase" xsi:type="AttributePassword">
+          <sql>auth_passphrase</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <dependencies>
+            <attribute id="security_level"/>
+            <attribute id="auth_protocol"/>
+          </dependencies>
+        </field>
+        <field id="priv_protocol" xsi:type="AttributeEnum">
+          <sql>priv_protocol</sql>
+          <values>
+            <value id="des">
+              <code>des</code>
+              <rank>1</rank>
+            </value>
+            <value id="aes">
+              <code>aes</code>
+              <rank>2</rank>
+            </value>
+          </values>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>list</display_style>
+          <sort_type>rank</sort_type>
+          <dependencies>
+            <attribute id="security_level"/>
+          </dependencies>
+        </field>
+        <field id="priv_passphrase" xsi:type="AttributePassword">
+          <sql>priv_passphrase</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <dependencies>
+            <attribute id="security_level"/>
+            <attribute id="priv_protocol"/>
+          </dependencies>
+        </field>
+        <field id="context_name" xsi:type="AttributeString">
+          <sql>context_name</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+          <dependencies>
+            <attribute id="security_level"/>
+          </dependencies>
+        </field>
+      </fields>
+      <methods>
+        <method id="IsAttributeRelevantForSecurityLevel">
+          <static>true</static>
+          <access>public</access>
+          <type>Custom</type>
+          <code><![CDATA[	public static function IsAttributeRelevantForSecurityLevel(string $sAttCode, ?string $sSecLevel)
+	{
+		switch ($sAttCode) {
+			case 'community':
+				return empty($sSecLevel);
+			case 'security_name':
+			case 'context_name':
+				return !empty($sSecLevel);
+			case 'auth_passphrase':
+			case 'auth_protocol':
+				return $sSecLevel == 'authPriv' || $sSecLevel == 'authNoPriv';
+			case 'priv_passphrase':
+			case 'priv_protocol':
+				return $sSecLevel == 'authPriv';
+			default:
+				return false;
+		}
+	}]]></code>
+        </method>
+        <method id="GetInitialStateAttributeFlags">
+          <static>false</static>
+          <access>public</access>
+          <type>Overload-DBObject</type>
+          <code><![CDATA[ public function GetInitialStateAttributeFlags($sAttCode, &$aReasons = array())
+	{
+		$iFlags = 0;
+		switch ($sAttCode) {
+			case 'priv_passphrase':
+				if (!empty($this->Get('priv_protocol'))) $iFlags |= OPT_ATT_MANDATORY;
+				break;
+			case 'auth_passphrase':
+				if (!empty($this->Get('auth_protocol'))) $iFlags |= OPT_ATT_MANDATORY;
+				break;
+			case 'auth_protocol':
+			case 'priv_protocol':
+			case 'security_name':
+			case 'community';
+				if (static::IsAttributeRelevantForSecurityLevel($sAttCode, $this->Get('security_level'))) $iFlags |= OPT_ATT_MANDATORY;
+				break;
+		}
+
+		return $iFlags | parent::GetInitialStateAttributeFlags($sAttCode, $aReasons);
+    }]]></code>
+        </method>
+        <method id="GetAttributeFlags">
+          <static>false</static>
+          <access>public</access>
+          <type>Overload-DBObject</type>
+          <code><![CDATA[ public function GetAttributeFlags($sAttCode, &$aReasons = array(), $sTargetState = '')
+	{
+		$iFlags = 0;
+		switch ($sAttCode) {
+			case 'priv_passphrase':
+				if (!empty($this->Get('priv_protocol'))) $iFlags |= OPT_ATT_MANDATORY;
+				break;
+			case 'auth_passphrase':
+				if (!empty($this->Get('auth_protocol'))) $iFlags |= OPT_ATT_MANDATORY;
+				break;
+			case 'auth_protocol':
+			case 'priv_protocol':
+			case 'security_name':
+			case 'community';
+				if (static::IsAttributeRelevantForSecurityLevel($sAttCode, $this->Get('security_level'))) $iFlags |= OPT_ATT_MANDATORY;
+				break;
+		}
+
+		return $iFlags | parent::GetAttributeFlags($sAttCode, $aReasons, $sTargetState);
+    }]]></code>
+        </method>
+        <method id="ComputeValues">
+          <static>false</static>
+          <access>public</access>
+          <type>Overload-DBObject</type>
+          <code><![CDATA[ public function ComputeValues()
+	{
+		parent::ComputeValues();
+
+		foreach ([
+			'community',
+			'security_name',
+			'auth_passphrase',
+			'auth_protocol',
+			'priv_passphrase',
+			'priv_protocol',
+			'context_name',
+		] as $sAttCode){
+			if (!static::IsAttributeRelevantForSecurityLevel($sAttCode, $this->Get('security_level'))) $this->Set($sAttCode, null);
+		}
+    }]]></code>
+        </method>
+      </methods>
+      <presentation>
+        <details>
+          <items>
+            <item id="col:col1">
+              <rank>10</rank>
+              <items>
+                <item id="fieldset:SnmpCredentials:baseinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="name">
+                      <rank>10</rank>
+                    </item>
+                    <item id="org_id">
+                      <rank>20</rank>
+                    </item>
+                    <item id="description">
+                      <rank>30</rank>
+                    </item>
+                  </items>
+                </item>
+                <item id="fieldset:SnmpCredentials:v1-v2c">
+                  <rank>20</rank>
+                  <items>
+                    <item id="community">
+                      <rank>10</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:col2">
+              <rank>20</rank>
+              <items>
+                <item id="fieldset:SnmpCredentials:v3">
+                  <rank>10</rank>
+                  <items>
+                    <item id="security_level">
+                      <rank>10</rank>
+                    </item>
+                    <item id="security_name">
+                      <rank>20</rank>
+                    </item>
+                    <item id="auth_protocol">
+                      <rank>30</rank>
+                    </item>
+                    <item id="auth_passphrase">
+                      <rank>40</rank>
+                    </item>
+                    <item id="priv_protocol">
+                      <rank>50</rank>
+                    </item>
+                    <item id="priv_passphrase">
+                      <rank>60</rank>
+                    </item>
+                    <item id="context_name">
+                      <rank>70</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="device_list">
+              <rank>30</rank>
+            </item>
+          </items>
+        </details>
+        <default_search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="security_level">
+              <rank>30</rank>
+            </item>
+          </items>
+        </default_search>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+        <list>
+          <items>
+            <item id="org_id">
+              <rank>10</rank>
+            </item>
+            <item id="security_level">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+        <summary>
+          <items>
+            <item id="description">
+              <rank>10</rank>
+            </item>
+            <item id="security_level">
+              <rank>20</rank>
+            </item>
+          </items>
+        </summary>
+      </presentation>
+    </class>
+    <class id="NetworkFlowCapacity" _delta="define">
+      <parent>Typology</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>networkflowcapacity</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </naming>
+        <icon/>
+        <reconciliation>
+          <attributes>
+            <attribute id="name"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules>
+          <rule id="name">
+            <attributes>
+              <attribute id="name"/>
+            </attributes>
+            <filter/>
+            <disabled>false</disabled>
+            <is_blocking>true</is_blocking>
+          </rule>
+        </uniqueness_rules>
+      </properties>
+      <fields>
+        <field id="description" xsi:type="AttributeText">
+          <sql>description</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="networkflows_list" xsi:type="AttributeLinkedSet">
+          <linked_class>NetworkFlow</linked_class>
+          <ext_key_to_me>networkflowcapacity_id</ext_key_to_me>
+          <edit_mode>none</edit_mode>
+          <count_min>0</count_min>
+          <count_max>0</count_max>
+          <duplicates/>
+        </field>
+      </fields>
+      <methods/>
+      <presentation>
+        <details>
+          <items>
+            <item id="networkflows_list">
+              <rank>10</rank>
+            </item>
+            <item id="name">
+              <rank>20</rank>
+            </item>
+            <item id="description">
+              <rank>30</rank>
+            </item>
+          </items>
+        </details>
+        <list>
+          <items>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </list>
+        <default_search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </default_search>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="description">
+              <rank>20</rank>
+            </item>
+          </items>
+        </search>
+      </presentation>
+    </class>
+    <class id="NetworkFlow" _delta="define">
+      <parent>cmdbAbstractObject</parent>
+      <properties>
+        <category>bizmodel,searchable,configmgmt</category>
+        <abstract>false</abstract>
+        <key_type>autoincrement</key_type>
+        <db_table>networkflow</db_table>
+        <db_key_field>id</db_key_field>
+        <db_final_class_field/>
+        <naming>
+          <attributes>
+            <attribute id="protocol"/>
+            <attribute id="source_ci_name"/>
+            <attribute id="source_port"/>
+            <attribute id="dest_ci_name"/>
+            <attribute id="dest_port"/>
+          </attributes>
+        </naming>
+        <style>
+          <icon>asset/img/icons8-flow.svg</icon>
+        </style>
+        <reconciliation>
+          <attributes>
+            <attribute id="protocol"/>
+            <attribute id="source_ci_name"/>
+            <attribute id="source_port"/>
+            <attribute id="dest_ci_name"/>
+            <attribute id="dest_port"/>
+          </attributes>
+        </reconciliation>
+        <uniqueness_rules/>
+      </properties>
+      <fields>
+        <field id="name" xsi:type="AttributeString">
+          <sql>name</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="org_id" xsi:type="AttributeExternalKey">
+          <sql>org_id</sql>
+          <target_class>Organization</target_class>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_MANUAL</on_target_delete>
+          <jointype/>
+        </field>
+        <field id="org_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>org_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="protocol" xsi:type="AttributeEnum">
+          <values>
+            <value id="UDP">
+              <code>UDP</code>
+            </value>
+            <value id="TCP">
+              <code>TCP</code>
+            </value>
+            <value id="UDP/TCP">
+              <code>UDP/TCP</code>
+            </value>
+            <value id="Other">
+              <code>Other</code>
+            </value>
+          </values>
+          <sql>protocol</sql>
+          <default_value/>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+        <field id="source_port" xsi:type="AttributeString">
+          <sql>source_port</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="dest_port" xsi:type="AttributeString">
+          <sql>dest_port</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="source_ci_id" xsi:type="AttributeExternalKey">
+          <sql>source_ci_id</sql>
+          <target_class>FunctionalCI</target_class>
+          <filter><![CDATA[SELECT FunctionalCI WHERE org_id = :this->org_id]]></filter>
+          <dependencies>
+            <attribute id="org_id"/>
+          </dependencies>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="source_ci_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>source_ci_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="dest_ci_id" xsi:type="AttributeExternalKey">
+          <sql>dest_ci_id</sql>
+          <target_class>FunctionalCI</target_class>
+          <filter><![CDATA[SELECT FunctionalCI WHERE org_id = :this->org_id]]></filter>
+          <dependencies>
+            <attribute id="org_id"/>
+          </dependencies>
+          <is_null_allowed>false</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="dest_ci_name" xsi:type="AttributeExternalField">
+          <extkey_attcode>dest_ci_id</extkey_attcode>
+          <target_attcode>name</target_attcode>
+        </field>
+        <field id="status" xsi:type="AttributeEnum">
+          <values>
+            <value id="production">
+              <code>production</code>
+            </value>
+            <value id="implementation">
+              <code>implementation</code>
+            </value>
+            <value id="obsolete">
+              <code>obsolete</code>
+            </value>
+          </values>
+          <sql>status</sql>
+          <default_value>production</default_value>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>list</display_style>
+        </field>
+        <field id="move2production" xsi:type="AttributeDate">
+          <sql>move2production</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="description" xsi:type="AttributeText">
+          <sql>description</sql>
+          <default_value/>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+        <field id="business_criticity" xsi:type="AttributeEnum">
+          <sql>business_criticity</sql>
+          <sort_type>rank</sort_type>
+          <values>
+            <value id="high">
+              <code>high</code>
+              <rank>10</rank>
+            </value>
+            <value id="medium">
+              <code>medium</code>
+              <rank>20</rank>
+            </value>
+            <value id="low">
+              <code>low</code>
+              <rank>30</rank>
+            </value>
+          </values>
+          <default_value>low</default_value>
+          <is_null_allowed>true</is_null_allowed>
+          <display_style>list</display_style>
+        </field>
+        <field id="networkflowcapacity_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>networkflowcapacity_id</sql>
+          <target_class>NetworkFlowCapacity</target_class>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+        <field id="interfacespeed_id" xsi:type="AttributeExternalKey" _delta="define">
+          <sql>interfacespeed_id</sql>
+          <target_class>InterfaceSpeed</target_class>
+          <is_null_allowed>true</is_null_allowed>
+          <on_target_delete>DEL_AUTO</on_target_delete>
+        </field>
+      </fields>
+      <methods/>
+      <relations>
+        <relation id="networkflow">
+          <neighbours>
+            <neighbour id="dest_ci_id">
+              <attribute>dest_ci_id</attribute>
+              <direction>down</direction>
+            </neighbour>
+          </neighbours>
+        </relation>
+      </relations>
+      <presentation>
+        <details>
+          <items>
+            <item id="col:col1">
+              <rank>10</rank>
+              <items>
+                <item id="fieldset:Class:NetworkFlow:baseinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="name">
+                      <rank>10</rank>
+                    </item>
+                    <item id="org_id">
+                      <rank>20</rank>
+                    </item>
+                    <item id="status">
+                      <rank>30</rank>
+                    </item>
+                    <item id="business_criticity">
+                      <rank>40</rank>
+                    </item>
+                    <item id="move2production">
+                      <rank>50</rank>
+                    </item>
+                    <item id="description">
+                      <rank>60</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:col2">
+              <rank>20</rank>
+              <items>
+                <item id="fieldset:Class:NetworkFlow:flowinfo">
+                  <rank>10</rank>
+                  <items>
+                    <item id="protocol">
+                      <rank>10</rank>
+                    </item>
+                    <item id="source_ci_id">
+                      <rank>20</rank>
+                    </item>
+                    <item id="source_port">
+                      <rank>30</rank>
+                    </item>
+                    <item id="dest_ci_id">
+                      <rank>40</rank>
+                    </item>
+                    <item id="dest_port">
+                      <rank>50</rank>
+                    </item>
+                    <item id="networkflowcapacity_id">
+                      <rank>60</rank>
+                    </item>
+                    <item id="interfacespeed_id">
+                      <rank>70</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+        <default_search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="source_ci_id">
+              <rank>20</rank>
+            </item>
+            <item id="source_port">
+              <rank>30</rank>
+            </item>
+            <item id="dest_ci_id">
+              <rank>40</rank>
+            </item>
+            <item id="dest_port">
+              <rank>50</rank>
+            </item>
+            <item id="networkflowcapacity_id">
+              <rank>60</rank>
+            </item>
+            <item id="interfacespeed_id">
+              <rank>70</rank>
+            </item>
+          </items>
+        </default_search>
+        <search>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="status">
+              <rank>30</rank>
+            </item>
+            <item id="protocol">
+              <rank>40</rank>
+            </item>
+            <item id="source_ci_id">
+              <rank>50</rank>
+            </item>
+            <item id="source_port">
+              <rank>60</rank>
+            </item>
+            <item id="dest_ci_id">
+              <rank>70</rank>
+            </item>
+            <item id="dest_port">
+              <rank>80</rank>
+            </item>
+            <item id="networkflowcapacity_id">
+              <rank>90</rank>
+            </item>
+            <item id="interfacespeed_id">
+              <rank>100</rank>
+            </item>
+          </items>
+        </search>
+        <list>
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+            <item id="org_id">
+              <rank>20</rank>
+            </item>
+            <item id="status">
+              <rank>30</rank>
+            </item>
+            <item id="protocol">
+              <rank>40</rank>
+            </item>
+            <item id="source_ci_id">
+              <rank>50</rank>
+            </item>
+            <item id="source_port">
+              <rank>60</rank>
+            </item>
+            <item id="dest_ci_id">
+              <rank>70</rank>
+            </item>
+            <item id="dest_port">
+              <rank>80</rank>
+            </item>
+            <item id="networkflowcapacity_id">
+              <rank>90</rank>
+            </item>
+            <item id="interfacespeed_id">
+              <rank>100</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+    <class id="FunctionalCI" _delta="must_exist">
+      <relations>
+        <relation id="networkflow" _delta="define">
+          <neighbours>
+            <neighbour id="networkflow">
+              <query_up>SELECT NetworkFlow AS nf WHERE nf.dest_ci_id = :this->id AND nf.status = 'production'</query_up>
+              <query_down>SELECT NetworkFlow AS nf WHERE nf.source_ci_id = :this->id AND nf.status = 'production'</query_down>
+              <direction>down</direction>
+            </neighbour>
+          </neighbours>
+        </relation>
+      </relations>
+    </class>
+    <class id="Brand" _created_in="itop-config-mgmt" _delta="must_exist">
+      <properties>
+        <fields_semantic>
+          <image_attribute _delta="define_if_not_exists">logo</image_attribute>
+        </fields_semantic>
+      </properties>
+      <fields>
+        <field id="logo" xsi:type="AttributeImage" _delta="define_if_not_exists">
+          <display_max_width>96</display_max_width>
+          <display_max_height>96</display_max_height>
+          <storage_max_width>128</storage_max_width>
+          <storage_max_height>128</storage_max_height>
+          <is_null_allowed>true</is_null_allowed>
+        </field>
+      </fields>
+      <presentation>
+        <details>
+          <items>
+            <item id="logo" _delta="define_if_not_exists">
+              <rank>20</rank>
+            </item>
+          </items>
+        </details>
+        <summary _delta="define_if_not_exists">
+          <items>
+            <item id="name">
+              <rank>10</rank>
+            </item>
+          </items>
+        </summary>
+        <list>
+          <items>
+            <item id="name" _delta="delete_if_exists"/>
+            <item id="logo" _delta="define_if_not_exists">
+              <rank>10</rank>
+            </item>
+          </items>
+        </list>
+      </presentation>
+    </class>
+  </classes>
+  <menus>
+    <menu id="ConfigManagementOverview" xsi:type="DashboardMenuNode" _delta="must_exist">
+      <definition>
+        <cells>
+          <cell id="0" _delta="must_exist">
+            <dashlets>
+              <dashlet id="teemip-00042" xsi:type="DashletBadge" _delta="define">
+                <rank>4.2</rank>
+               <class>NetworkDeviceComponent</class>
+             </dashlet>
+              <dashlet id="teemip-00043" xsi:type="DashletBadge" _delta="define">
+                <rank>4.3</rank>
+                <class>ClusterNetwork</class>
+              </dashlet>
+            </dashlets>
+          </cell>
+        </cells>
+      </definition>
+    </menu>
+    <menu id="ConfigManagement:TeemIpNetworking" _delta="must_exist">
+      <definition>
+        <cells>
+          <cell id="teemip_interfaces" _delta="must_exist">
+            <dashlets>
+              <dashlet id="70" xsi:type="DashletBadge" _delta="define">
+                <rank>70</rank>
+                <class>AggregateLink</class>
+              </dashlet>
+            </dashlets>
+          </cell>
+          <cell id="teemip_connectivity" _delta="must_exist">
+            <dashlets>
+              <dashlet id="teemip-snmp_credentials" xsi:type="DashletBadge" _delta="define">
+                <rank>50</rank>
+                <class>SnmpCredentials</class>
+              </dashlet>
+              <dashlet id="60" xsi:type="DashletBadge" _delta="define">
+                <rank>60</rank>
+                <class>NetworkFlow</class>
+              </dashlet>
+            </dashlets>
+          </cell>
+        </cells>
+      </definition>
+    </menu>
+    <menu id="Typology" _delta="must_exist">
+      <definition>
+        <cells>
+          <cell id="Network" _delta="must_exist">
+            <dashlets>
+              <dashlet id="teemip-1104" xsi:type="DashletBadge" _delta="define">
+                <rank>3</rank>
+                <class>InterfaceSpeed</class>
+              </dashlet>
+              <dashlet id="teemip-1105" xsi:type="DashletBadge" _delta="define">
+                <rank>4</rank>
+                <class>Layer2Protocol</class>
+              </dashlet>
+              <dashlet id="teemip-1106" xsi:type="DashletBadge" _delta="define">
+                <rank>5</rank>
+                <class>InterfaceConnector</class>
+              </dashlet>
+              <dashlet id="teemip-1107" xsi:type="DashletBadge" _delta="define">
+                <rank>6</rank>
+                <class>NetworkFlowCapacity</class>
+              </dashlet>
+            </dashlets>
+          </cell>
+        </cells>
+      </definition>
+    </menu>
+  </menus>
+  <user_rights>
+    <groups>
+      <group id="Network" _delta="must_exist">
+        <classes>
+          <class id="AggregateLink" _delta="define"/>
+          <class id="ClusterNetwork" _delta="define"/>
+          <class id="InterfaceConnector" _delta="define"/>
+          <class id="InterfaceSpeed" _delta="define"/>
+          <class id="Layer2Protocol" _delta="define"/>
+          <class id="NetworkDeviceComponent" _delta="define"/>
+        </classes>
+      </group>
+      <group id="SNMP" _delta="define">
+        <classes>
+          <class id="SnmpCredentials"/>
+        </classes>
+      </group>
+      <group id="NetworkFlow" _delta="define">
+        <classes>
+          <class id="NetworkFlowCapacity"/>
+          <class id="NetworkFlow"/>
+        </classes>
+      </group>
+   </groups>
+    <profiles>
+      <profile id="5327" _delta="define">
+        <name>Network Security Manager</name>
+        <description>Person in charge of network security. Must be used in conjunction with "Configuration Manager" profile.</description>
+        <groups>
+          <group id="SNMP">
+            <actions>
+              <action id="action:read">allow</action>
+              <action id="action:bulk read">allow</action>
+              <action id="action:write">allow</action>
+              <action id="action:bulk write">allow</action>
+              <action id="action:delete">allow</action>
+             </actions>
+          </group>
+          <group id="NetworkFlow">
+            <actions>
+              <action id="action:read">allow</action>
+              <action id="action:bulk read">allow</action>
+              <action id="action:write">allow</action>
+              <action id="action:bulk write">allow</action>
+              <action id="action:delete">allow</action>
+             </actions>
+          </group>
+         </groups>
+      </profile>
+    </profiles>
+  </user_rights>
+</itop_design>
